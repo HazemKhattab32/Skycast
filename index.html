@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkyCast — Weather Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky-bg" id="skyBg">
+    <div class="celestial" id="celestial"></div>
+    <div class="stars" id="stars"></div>
+    <div class="clouds" id="clouds"></div>
+    <div class="precip" id="precip"></div>
+    <div class="flash" id="flash"></div>
+  </div>
+
+  <div class="app">
+    <header class="header">
+      <h1>☁️ SkyCast</h1>
+      <form id="searchForm" class="search-form">
+        <input type="text" id="cityInput" placeholder="Search city (e.g. Alexandria)" autocomplete="off" required>
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <div id="loadingState" class="loading hidden">Loading weather data...</div>
+    <div id="errorState" class="error hidden"></div>
+
+    <main id="weatherContent" class="weather-content hidden">
+      <section class="current-card">
+        <div class="current-top">
+          <div>
+            <h2 id="cityName">--</h2>
+            <p id="dateNow" class="date-text">--</p>
+          </div>
+          <div class="current-icon" id="currentIcon">☀️</div>
+        </div>
+        <div class="current-main">
+          <span class="temp-big" id="currentTemp">--°</span>
+          <span class="condition-text" id="currentCondition">--</span>
+        </div>
+        <div class="current-details">
+          <div><span>Feels Like</span><strong id="feelsLike">--°</strong></div>
+          <div><span>Humidity</span><strong id="humidity">--%</strong></div>
+          <div><span>Wind</span><strong id="wind">-- km/h</strong></div>
+          <div><span>Precipitation</span><strong id="precipValue">-- mm</strong></div>
+        </div>
+      </section>
+
+      <section class="forecast-section">
+        <h3>7-Day Forecast</h3>
+        <div class="forecast-grid" id="forecastGrid"></div>
+      </section>
+
+      <section class="hourly-section">
+        <h3>Next 24 Hours</h3>
+        <div class="hourly-scroll" id="hourlyScroll"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
